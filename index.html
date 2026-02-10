@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Coast Archive</title>
+    <style>
+        /* CSS Variables for easy color management */
+        :root {
+            --primary-green: #4caf50;
+            --dark-green: #2e7d32;
+            --bg-white: #ffffff;
+            --light-gray: #f9f9f9;
+            --text-main: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-white);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Header & Logo */
+        header {
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 220px;
+            height: auto;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 10px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            padding: 10px;
+        }
+
+        .nav-box {
+            display: inline-block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: var(--dark-green);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            border: 2px solid var(--primary-green);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .nav-box:hover, .nav-box.active {
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: none; /* Hidden by default */
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .active-section {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Home Section Styling */
+        .home-grid {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nkrumah-img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Resources Styling */
+        .resource-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background: var(--light-gray);
+            border-left: 5px solid var(--primary-green);
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+
+        .resource-card:hover {
+            transform: scale(1.01);
+            background: #f0fdf0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .resource-card h3 {
+            margin: 0 0 10px 0;
+            color: var(--dark-green);
+        }
+
+        /* Contact Styling */
+        .contact-info {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .home-grid { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="Logo.png" alt="Gold Coast Archive Logo" class="logo">
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-box active" onclick="showSection('home')">Home</div>
+            <div class="nav-box" onclick="showSection('about')">About Us</div>
+            <div class="nav-box" onclick="showSection('contact')">Contact Us</div>
+            <div class="nav-box" onclick="showSection('resources')">Resources</div>
+        </div>
+    </nav>
+
+    <div id="home" class="content-section active-section">
+        <div class="home-grid">
+            <img src="Nkrumah.png" alt="Kwame Nkrumah" class="nkrumah-img">
+            <div>
+                <h1>Kwame Nkrumah & Independence</h1>
+                <p>Dr. Kwame Nkrumah was the visionary leader who transformed the Gold Coast into Ghana. Returning in 1947, he spearheaded the "Independence Now" movement, emphasizing that African self-governance was a fundamental right.</p>
+                <p>As the first President, his legacy is defined by Pan-Africanism and the belief that the independence of Ghana was the spark needed to ignite freedom across the entire continent.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="content-section">
+        <h1>About the Gold Coast Archive</h1>
+        <p>The Gold Coast Archive is a digital sanctuary dedicated to preserving the rich, complex, and vibrant history of Ghana. Our blog serves as a bridge between the past and the present, documenting the journey from colonial rule to sovereign pride.</p>
+        <p>Whether you are a student of history, a researcher, or someone looking to reconnect with Ghanaian roots, we provide curated stories, historical photos, and insights into the figures and events that shaped our nation.</p>
+    </div>
+
+    <div id="contact" class="content-section">
+        <h1>Get In Touch</h1>
+        <div class="contact-info">
+            <p><strong>📞 Phone:</strong> 0509033751</p>
+            <p><strong>📧 Email:</strong> dorgbedo@gmail.com</p>
+            <p><strong>📍 Address:</strong> 546 Lante Djan St, Osu, Accra</p>
+        </div>
+    </div>
+
+    <div id="resources" class="content-section">
+        <h1>Historical Resources</h1>
+        
+        <a href="https://www.ghanaweb.com/GhanaHomePage/NewsArchive/Here-are-the-five-oldest-senior-high-schools-in-Ghana-2011496" target="_blank" class="resource-card">
+            <h3>Top 5 Oldest Senior High Schools in Ghana</h3>
+            <p>A sneak peek into Ghana's educational foundation, exploring the history of institutions like Mfantsipim and Adisadel College that shaped the nation's elite.</p>
+        </a>
+
+        <a href="https://en.wikipedia.org/wiki/Kulungugu_bomb_attack" target="_blank" class="resource-card">
+            <h3>The Kulungugu Bomb Attack</h3>
+            <p>Read a summary of the 1962 assassination attempt on Kwame Nkrumah, a pivotal moment of political tension that changed the course of Ghana's security landscape.</p>
+        </a>
+
+        <a href="https://www.citylifeaccra.com/things-to-do-accra-listings/independence-square-and-arch" target="_blank" class="resource-card">
+            <h3>Independence Square & Arch</h3>
+            <p>A guide to the monuments in Accra built to honor the liberation of the Gold Coast. Discover the symbolism behind the Black Star Gate and the vast ceremonial grounds.</p>
+        </a>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active-section'));
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.nav-box');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active-section');
+            
+            // Highlight the clicked button
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
